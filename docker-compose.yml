@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  work-tunnel:
+    image: passport888/work-tunnel:latest
+    container_name: work-tunnel
+    restart: unless-stopped
+    environment:
+      PORT: "11443"
+      UUID: "your-uuid"
+      TUNNEL_DOMAIN: "your.domain.com"
+      TUNNEL_TOKEN: "your-tunnel-token"
