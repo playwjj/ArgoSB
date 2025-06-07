@@ -8,7 +8,8 @@ fi
 
 # 启动 Cloudflare Tunnel
 echo "[cloudflared] Starting tunnel..."
-exec cloudflared tunnel --no-autoupdate run --token $TUNNEL_TOKEN
+cloudflared tunnel --no-autoupdate run --token $TUNNEL_TOKEN &
+CLOUDFLARED_PID=$!
 
 echo "[INFO] Starting ArgoSB Script (local)..."
 
@@ -16,5 +17,8 @@ echo "[INFO] Starting ArgoSB Script (local)..."
 vlpt="$PORT" uuid="$UUID" argo="n" bash /app/argosb.sh
 
 echo $TUNNEL_DOMAIN
+
+# 等待 cloudflared 进程
+wait $CLOUDFLARED_PID
 
 tail -f /dev/null
