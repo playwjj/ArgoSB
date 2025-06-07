@@ -1,16 +1,19 @@
+
 ## ArgoSB一键无交互代理脚本【当前版本：25.6.5】
 
 ### 1、脚本主打极简、轻便的体验，记忆式变量脚本，一次回车随装随用
 
-### 2、使用Sing-box主内核+可选Cloudflared-Argo内核
+### 2、支持Docker Image镜像部署，公开镜像库：```ygkkk/argosb```
 
-### 3、支持非root模式，一个脚本兼容主流VPS系统与容器NIX系统
+### 3、使用Sing-box主内核+可选Cloudflared-Argo内核
 
-### 4、支持单个或多个代理协议任意组合
+### 4、支持非root模式，一个脚本兼容主流VPS系统与容器NIX系统
 
-### 5、目前支持Vless-reality、Vmess-ws、Hy2、Tuic、Argo临时/固定隧道，其他协议增加中
+### 5、支持单个或多个代理协议任意组合
 
-### 6、如果需要多样的功能，推荐使用VPS专用四合一脚本[sing-box-yg](https://github.com/yonggekkk/sing-box-yg)
+### 6、目前支持Vless-reality、Vmess-ws、Hy2、Tuic、Argo临时/固定隧道，其他协议增加中
+
+### 7、如果需要多样的功能，推荐使用VPS专用四合一脚本[sing-box-yg](https://github.com/yonggekkk/sing-box-yg)
 
 ----------------------------------------------------------
 
@@ -27,7 +30,8 @@
 | 7、argo开关 | argo | 填写y | 关闭argo隧道 | 关闭argo隧道 | 可选，填写y时，vmess必须启用变量 |
 | 8、argo固定域名 | agn | 解析在CF上的域名 | 使用临时隧道 | 使用临时隧道 | 可选，argo填写y才可激活固定/临时隧道|
 | 9、argo token | agk | CF获取的token | 使用临时隧道 | 使用临时隧道 | 可选，argo填写y才可激活固定/临时隧道 |
-| 10、切换ipv4或ipv6配置 | ip | 填写4或者6 | 自动识别IP配置 | 自动识别IP配置 | 可选 |
+| 10、docker监听端口 | PORT | 端口指定 | 3000 | 3000 | 可选 |
+| 11、切换ipv4或ipv6配置 | ip | 填写4或者6 | 自动识别IP配置 | 自动识别IP配置 | 可选 |
 
 #### 一键脚本模版：
 ```
@@ -110,4 +114,6 @@ hypt="" bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/
 ----------------------------------------------------------
 
 ### Thanks to [VTEXS](https://console.vtexs.com/?affid=1558) for the sponsorship support
+
+### [![Powered by DartNode](https://dartnode.com/branding/DN-Open-Source-sm.png)](https://dartnode.com "Powered by DartNode - Free VPS for Open Source")
 
