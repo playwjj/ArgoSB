@@ -1,8 +1,20 @@
 #!/bin/bash
 
+# 检查是否存在 cloudflared
+if ! command -v cloudflared &> /dev/null; then
+    echo "[ERROR] cloudflared 未安装，请先安装 cloudflared"
+    exit 1
+fi
+
+# 启动 Cloudflare Tunnel
+echo "[cloudflared] Starting tunnel..."
+exec cloudflared tunnel --no-autoupdate run --token $TUNNEL_TOKEN
+
 echo "[INFO] Starting ArgoSB Script (local)..."
 
 # 映射环境变量为脚本参数，然后执行本地脚本
-vmpt="$PORT" uuid="$UUID" argo="y" agn="$TUNNEL_DOMAIN" agk="$TUNNEL_TOKEN" bash /app/argosb.sh
+vlpt="$PORT" uuid="$UUID" argo="n" bash /app/argosb.sh
+
+echo $TUNNEL_DOMAIN
 
 tail -f /dev/null
