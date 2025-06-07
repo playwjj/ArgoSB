@@ -9,7 +9,7 @@ docs/
 .git
 .gitignore
 .gitattributes
-.github
+.github/
 
 # 编辑器配置
 .vscode/
