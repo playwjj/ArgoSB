@@ -2,10 +2,6 @@ FROM alpine:latest
 
 RUN apk add --no-cache bash curl supervisor
 
-# 安装 cloudflared
-RUN curl -L https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 \
-    -o /usr/local/bin/cloudflared \
- && chmod +x /usr/local/bin/cloudflared
 
 WORKDIR /app
 
