@@ -1,6 +1,23 @@
-FROM alpine:latest
+FROM alpine:3.19
 
-RUN apk add --no-cache bash curl supervisor
+# 安装基础包
+RUN apk add --no-cache \
+    bash \
+    curl \
+    supervisor \
+    openssl \
+    virt-what \
+    iptables \
+    sed \
+    awk \
+    grep \
+    coreutils \
+    base64 \
+    util-linux \
+    shadow \
+    procps \
+    tzdata \
+    ca-certificates
 
 WORKDIR /app
 
