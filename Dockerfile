@@ -13,8 +13,6 @@ RUN apk update && \
     gawk \
     grep \
     coreutils \
-    util-linux \
-    shadow \
     procps \
     tzdata \
     ca-certificates \
