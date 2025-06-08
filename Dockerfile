@@ -1,7 +1,7 @@
-FROM alpine:3.19
+FROM alpine:latest
 
-# 安装基础包
-RUN apk add --no-cache \
+# 更新包索引并安装基础包
+RUN apk update && apk add --no-cache \
     bash \
     curl \
     supervisor \
