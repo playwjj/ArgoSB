@@ -2,7 +2,6 @@ FROM alpine:latest
 
 RUN apk add --no-cache bash curl supervisor
 
-
 WORKDIR /app
 
 RUN mkdir -p /etc/supervisor.d
