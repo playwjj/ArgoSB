@@ -1,7 +1,8 @@
 FROM alpine:latest
 
 # 更新包索引并安装基础包
-RUN apk update && apk add --no-cache \
+RUN apk update && \
+    apk add --no-cache \
     bash \
     curl \
     supervisor \
@@ -9,15 +10,15 @@ RUN apk update && apk add --no-cache \
     virt-what \
     iptables \
     sed \
-    awk \
+    gawk \
     grep \
     coreutils \
-    base64 \
     util-linux \
     shadow \
     procps \
     tzdata \
-    ca-certificates
+    ca-certificates \
+    && rm -rf /var/cache/apk/*
 
 WORKDIR /app
 
