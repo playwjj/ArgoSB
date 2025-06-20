@@ -1,13 +1,13 @@
 
-## ArgoSB一键无交互代理脚本【当前版本：25.6.10】
+## ArgoSB一键无交互代理脚本【当前版本：25.6.18】
 
 ### 1、基于Sing-box主内核 + 可选Cloudflared-Argo内核
 
 ### 2、支持Docker Image镜像部署，公开镜像库：```ygkkk/argosb```
 
-### 3、SSH脚本主打极简、轻便的体验，记忆式变量脚本，一次回车随装随用
+### 3、SSH脚本主打极简、轻便的体验，支持非root模式，兼容所有主流VPS系统
 
-### 4、支持非root模式，SSH脚本兼容主流VPS系统与容器NIX系统
+### 4、支持NIX容器系统，特别推荐Google-IDX、Clawcloud爪云使用
 
 ### 5、高自由度，支持单个或多个代理协议任意组合
 
@@ -34,9 +34,9 @@
 | 11、【仅docker】监听端口，网页查询 | PORT | 端口指定 | 3000 | 3000 | 可选 |
 | 12、【仅docker】启用vless-ws-tls | DOMAIN | 服务器域名 | 关闭vless-ws-tls | 关闭vless-ws-tls | 可选，vless-ws-tls可独立存在，uuid变量必须启用 |
 
-![5fb8c398f89b77b8ed626f4d0681c5c](https://github.com/user-attachments/assets/eedcb804-cac2-42b5-bafe-3cdfbb06acb7)
+![fdb76495fab11507148086c94d06453](https://github.com/user-attachments/assets/368cfe37-e215-4149-b6dd-4b295672a965)
 
-#### 建议clawcloud部署时，uuid变量都加上，保证重启后uuid也不变
+#### 使用argosb镜像注意：1、uuid变量都加上，重启后uuid不变。2、点击restart重启，即可自动更新镜像
 
 ----------------------------------------------------------
 
@@ -86,11 +86,11 @@ hypt="" bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/
 
 显示IPV4节点配置：
 
-```ip=4 agsb cip```或者```ip=4 bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/argosbx.sh) cip```
+```ip=4 agsb list```或者```ip=4 bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/argosbx.sh) list```
 
 显示IPV6节点配置：
 
-```ip=6 agsb cip```或者```ip=6 bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/argosbx.sh) cip```
+```ip=6 agsb list```或者```ip=6 bash <(curl -Ls https://raw.githubusercontent.com/yonggekkk/argosb/main/argosbx.sh) list```
 
  3、卸载脚本：
 

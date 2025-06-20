@@ -19,8 +19,8 @@ export ARGO_AUTH=${agk:-''}
 export ipsw=${ip:-''}
 showmode(){
 echo "显示节点信息：agsb或者脚本 list"
-echo "双栈VPS显示IPv4节点配置：ip=4 agsb或者脚本 cip"
-echo "双栈VPS显示IPv6节点配置：ip=6 agsb或者脚本 cip"
+echo "双栈VPS显示IPv4节点配置：ip=4 agsb或者脚本 list"
+echo "双栈VPS显示IPv6节点配置：ip=6 agsb或者脚本 list"
 echo "卸载脚本：agsb或者脚本 del"
 }
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
@@ -28,7 +28,7 @@ echo "甬哥Github项目 ：github.com/yonggekkk"
 echo "甬哥Blogger博客 ：ygkkk.blogspot.com"
 echo "甬哥YouTube频道 ：www.youtube.com/@ygkkk"
 echo "ArgoSB一键无交互脚本"
-echo "当前版本：25.6.10"
+echo "当前版本：25.6.18"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 hostname=$(uname -a | awk '{print $2}')
 op=$(cat /etc/redhat-release 2>/dev/null || cat /etc/os-release 2>/dev/null | grep -i pretty_name | cut -d \" -f2)
@@ -502,10 +502,6 @@ echo "卸载完成"
 exit
 elif [ "$1" = "list" ]; then
 cip
-exit
-elif [ "$1" = "cip" ]; then
-cip && sleep 2
-echo "配置切换完成"
 exit
 fi
 
